@@ -8,7 +8,11 @@ export function ProductCard({ product, onClick }) {
     <div
       onClick={onClick}
       className="card shadow-sm hover-shadow cursor-pointer h-100 border-0 rounded-4 overflow-hidden "
-      style={{ transition: "transform 0.2s, box-shadow 0.2s", cursor: "pointer" }}
+      style={{
+        transition: "transform 0.2s, box-shadow 0.2s",
+        cursor: "pointer",
+      }}
+      data-testid={`product-card-${product.id}`}
       onMouseEnter={(e) =>
         (e.currentTarget.style.transform = "translateY(-5px)")
       }

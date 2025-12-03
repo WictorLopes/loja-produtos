@@ -1,6 +1,6 @@
 export function SkeletonCard() {
   return (
-    <div className="card shadow-sm h-100 border-0 rounded-4 overflow-hidden">
+    <div className="card shadow-sm h-100 border-0 rounded-4 overflow-hidden"  data-testid="skeleton-card">
       <div className="bg-light p-3 h-100">
         <div className="placeholder-glow mb-2">
           <div

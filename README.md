@@ -45,3 +45,25 @@ npm run dev
 ```bash
 http://localhost:5173
 ```
+
+### Para executar os testes rode
+
+```bash
+npm test
+```
+
+
+
+## 🧪 Padrões e Boas Práticas Adotadas
+
+- Organização baseada em páginas e contextos
+
+- Componentes simples e reutilizáveis
+
+- Funções puras para manipulação de dados
+
+- Código limpo com nomes claros e autoexplicativos
+
+- Padrão de CRUD replicado (create, list, edit)
+
+- Separação de responsabilidades (UI, lógica, API)

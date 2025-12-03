@@ -5,29 +5,28 @@ export function Sidebar({
   sortPrice,
   setSortPrice,
   isSidebarOpen,
-  onClose,  // Novo prop para fechar o sidebar (usado no overlay)
+  onClose,
 }) {
   return (
     <>
-      {/* Overlay escuro (só em mobile quando aberto) */}
       {isSidebarOpen && (
         <div
           className="position-fixed top-0 start-0 w-100 h-100 bg-dark opacity-50 d-lg-none"
-          style={{ zIndex: 1050 }}  // Z-index menor que o sidebar
-          onClick={onClose}  // Fecha ao clicar no overlay
+          style={{ zIndex: 1050 }} 
+          onClick={onClose}
         ></div>
       )}
 
       <div
         className={`bg-white rounded-4 shadow-sm p-4 ${
           isSidebarOpen
-            ? 'd-block position-fixed top-0 start-0 w-75 h-100'  // Overlay em mobile
-            : 'd-none d-lg-block sticky-lg-top'  // Oculto em mobile, visível em lg+
+            ? 'd-block position-fixed top-0 start-0 w-75 h-100'
+            : 'd-none d-lg-block sticky-lg-top'
         }`}
         style={{ 
           top: "80px", 
           width: "max-content", 
-          zIndex: 1060  // Z-index alto para sobrepor tudo
+          zIndex: 1060
         }}
       >
         {/* Seção de Categorias */}

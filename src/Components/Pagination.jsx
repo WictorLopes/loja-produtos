@@ -10,6 +10,7 @@ export function Pagination({ totalPages, currentPage, onPageChange }) {
         <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
           <button
             className="page-link"
+            disabled={currentPage === 1}
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
             aria-label="Previous"
           >
