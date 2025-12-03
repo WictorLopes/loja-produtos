@@ -12,7 +12,7 @@ export function Sidebar({
       {isSidebarOpen && (
         <div
           className="position-fixed top-0 start-0 w-100 h-100 bg-dark opacity-50 d-lg-none"
-          style={{ zIndex: 1050 }} 
+          style={{ zIndex: 1040 }}
           onClick={onClose}
         ></div>
       )}
@@ -26,7 +26,7 @@ export function Sidebar({
         style={{ 
           top: "80px", 
           width: "max-content", 
-          zIndex: 1060
+          zIndex: 1050
         }}
       >
         {/* Seção de Categorias */}

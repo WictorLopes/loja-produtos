@@ -111,7 +111,7 @@ export default function App() {
             sortPrice={sortPrice}
             setSortPrice={setSortPrice}
             isSidebarOpen={isSidebarOpen}
-            onClose={() => setIsSidebarOpen(false)} // Passa a função para fechar
+            onClose={() => setIsSidebarOpen(false)}
           />
         </aside>
 
