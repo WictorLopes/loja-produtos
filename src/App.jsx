@@ -15,6 +15,7 @@ export default function App() {
   const [sortPrice, setSortPrice] = useState("none");
   const [currentPage, setCurrentPage] = useState(1);
   const [modalProduct, setModalProduct] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const itemsPerPage = 12;
 
@@ -32,6 +33,7 @@ export default function App() {
   const handleSetCategoryFilter = (category) => {
     setCategoryFilter(category);
     setCurrentPage(1);
+    setIsSidebarOpen(false);
   };
   const handleSetSearchText = (text) => {
     setSearchText(text);
@@ -78,10 +80,19 @@ export default function App() {
     <div className="bg-light min-vh-100">
       <header
         className="py-3 shadow-sm sticky-top bg-gradient"
-        style={{ background: "linear-gradient(90deg, #FFB347, #FFCC33)" }}
+        style={{ backgroundColor: "white" }}
       >
         <div className="container-fluid container-xl d-flex align-items-center gap-3 px-4">
           <h1 className="h4 fw-bold text-black mb-0">🛒 Loja do Wictor</h1>
+
+          <button
+            className="btn btn-outline-dark d-lg-none"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            aria-label="Toggle sidebar"
+          >
+            ☰{" "}
+          </button>
+
           <Filters
             searchText={searchText}
             setSearchText={handleSetSearchText}
@@ -90,13 +101,17 @@ export default function App() {
       </header>
 
       <div className="container-fluid container-xl d-flex mt-4 px-4">
-        <aside className="d-none d-lg-block w-25 me-4">
+        <aside
+          className={isSidebarOpen ? "d-block" : "d-none d-lg-block w-25 me-4"}
+        >
           <Sidebar
             categories={categories}
             categoryFilter={categoryFilter}
             setCategoryFilter={handleSetCategoryFilter}
             sortPrice={sortPrice}
             setSortPrice={setSortPrice}
+            isSidebarOpen={isSidebarOpen}
+            onClose={() => setIsSidebarOpen(false)} // Passa a função para fechar
           />
         </aside>
 
